@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Contact</h1>
+  <!-- Method => HTTP Verb -->
+  <!-- Action => path where you're sending the info -->
+  <!-- name => what our info is called inside of our params -->
+  <form action="/contact" method="post">
+    <%= hidden_field_tag :name, 'whatever value' %>
+    <input type="text" name="member" class='form-control' value="<%= params[:member] %>">
+    <input type="submit" class="btn btn-primary">
+  </form>
+  <ul class="mt-3">
+    <% @members.each do |member| %>
+      <li><%= member.capitalize %></li>
+    <% end %>
+  </ul>
+  <p>
+    <%= link_to 'Home', root_path, class: 'btn btn-light'  %>
+  </p>
+</div>
